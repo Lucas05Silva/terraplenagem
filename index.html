@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Serv Tech, Terraplanagem em Londrina</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ████████████████████████████████████████████████████
+     LOADING SCREEN
+     ████████████████████████████████████████████████████ -->
+<div id="loader">
+  <div class="loader-brand">
+    <span class="loader-letter" style="animation-delay:0.1s">S</span>
+    <span class="loader-letter" style="animation-delay:0.18s">E</span>
+    <span class="loader-letter" style="animation-delay:0.26s">R</span>
+    <span class="loader-letter" style="animation-delay:0.34s">V</span>
+    <span class="loader-letter" style="animation-delay:0.44s">&nbsp;</span>
+    <span class="loader-letter orange" style="animation-delay:0.54s">T</span>
+    <span class="loader-letter orange" style="animation-delay:0.62s">E</span>
+    <span class="loader-letter orange" style="animation-delay:0.70s">C</span>
+    <span class="loader-letter orange" style="animation-delay:0.78s">H</span>
+  </div>
+  <div class="loader-bar-track">
+    <div class="loader-bar-fill"></div>
+  </div>
+  <div class="loader-tagline">Terraplanagem &amp; Infraestrutura</div>
+</div>
+
+<!-- ████████████████████████████████████████████████████
+     NAVIGATION
+     ████████████████████████████████████████████████████ -->
+<nav id="navbar">
+  <div class="nav-logo">
+    <span class="dot"></span>
+    Serv Tech
+  </div>
+  <div class="nav-links">
+    <a href="#hero" class="active">Home</a>
+    <a href="#about">Sobre</a>
+    <a href="#services">Serviços</a>
+    <a href="#projects">Projetos</a>
+    <a href="#faq">FAQ</a>
+  </div>
+  <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+    <span>Solicitar Orçamento</span>
+  </button>
+  <button class="nav-toggle" id="navToggle" aria-label="Abrir menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile Nav -->
+<div class="mobile-nav" id="mobileNav">
+  <button class="mobile-nav-close" id="mobileNavClose" aria-label="Fechar menu">&times;</button>
+  <a href="#hero" onclick="closeMobileNav()">Home</a>
+  <a href="#about" onclick="closeMobileNav()">Sobre</a>
+  <a href="#services" onclick="closeMobileNav()">Serviços</a>
+  <a href="#projects" onclick="closeMobileNav()">Projetos</a>
+  <a href="#contact" onclick="closeMobileNav()">Contato</a>
+  <a href="#faq" onclick="closeMobileNav()">FAQ</a>
+</div>
+
+<!-- Social Sidebar -->
+<div class="social-sidebar">
+  <a href="https://www.instagram.com/servtech__terraplenagem.pr/" target="_blank" rel="noopener" aria-label="Instagram">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+  </a>
+  <a href="https://www.facebook.com/p/Servtech-Terraplenagem-100068021702453/" target="_blank" rel="noopener" aria-label="Facebook">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+  </a>
+  <a href="https://wa.me/5543984345098" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+  </a>
+</div>
+
+<!-- ████████████████████████████████████████████████████
+     HERO SECTION
+     ████████████████████████████████████████████████████ -->
+<section class="hero" id="hero">
+  <div class="hero-container">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="line"></span>
+        Londrina, Paraná
+      </div>
+      <h1 class="hero-title">
+        <span class="word">Movemos a terra,</span>
+        <span class="word">Construímos o futuro</span>
+      </h1>
+      <p class="hero-desc">
+        Terraplanagem de alta precisão para loteamentos, condomínios e obras industriais.
+        Frota própria e equipe especializada em Londrina e região norte do Paraná.
+      </p>
+      <div class="hero-buttons">
+        <a href="#contact" class="btn-primary">Solicitar Orçamento</a>
+        <a href="#services" class="btn-secondary">Ver Serviços</a>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ████████████████████████████████████████████████████
+     ABOUT SECTION
+     ████████████████████████████████████████████████████ -->
+<section class="about" id="about">
+  <div class="section-container">
+    <div class="about-grid">
+      <div class="about-visual reveal">
+        <div class="about-visual-inner">
+          <div class="about-shape"></div>
+          <div class="about-icon-grid">
+            <div class="about-icon-card">
+              <div class="card-num" data-count="15">0</div>
+              <div class="card-label">Anos de Experiência</div>
+            </div>
+            <div class="about-icon-card">
+              <div class="card-num" data-count="200">0</div>
+              <div class="card-label">Projetos Concluídos</div>
+            </div>
+            <div class="about-icon-card">
+              <div class="card-num" data-count="50">0</div>
+              <div class="card-label">Máquinas Próprias</div>
+            </div>
+            <div class="about-icon-card">
+              <div class="card-num" data-count="98">0</div>
+              <div class="card-label">% Satisfação</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="about-content reveal" style="transition-delay: 0.2s;">
+        <div class="section-tag">Sobre Nós</div>
+        <h2 class="section-heading">Construímos a base<br>de grandes projetos</h2>
+        <p class="section-desc">
+          A Serv Tech é referência em terraplanagem e infraestrutura em Londrina e região norte do Paraná. Com frota própria e equipe especializada, entregamos projetos com agilidade, segurança e precisão topográfica.
+        </p>
+        <div class="about-features">
+          <div class="about-feature">
+            <div class="feat-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div class="feat-text">
+              <h4>Segurança em Primeiro Lugar</h4>
+              <p>Cumprimento integral das NRs e protocolos de segurança em cada obra.</p>
+            </div>
+          </div>
+          <div class="about-feature">
+            <div class="feat-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div class="feat-text">
+              <h4>Prazos Respeitados</h4>
+              <p>Planejamento rigoroso com cronograma executivo para cada etapa.</p>
+            </div>
+          </div>
+          <div class="about-feature">
+            <div class="feat-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+            </div>
+            <div class="feat-text">
+              <h4>Tecnologia Aplicada</h4>
+              <p>Topografia com GPS de alta precisão e maquinário de última geração.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ████████████████████████████████████████████████████
+     SERVICES SECTION
+     ████████████████████████████████████████████████████ -->
+<section class="services" id="services">
+  <div class="section-container">
+    <div class="services-header reveal">
+      <div class="section-tag">Serviços</div>
+      <h2 class="section-heading">Soluções completas em<br>movimentação de terra</h2>
+      <p class="section-desc">Do planejamento à entrega final, oferecemos todos os serviços de terraplanagem e infraestrutura que seu projeto precisa.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <h3>Terraplanagem</h3>
+        <p>Corte, aterro e nivelamento de terrenos com precisão milimétrica para loteamentos, condomínios e obras industriais.</p>
+        <div class="service-num">01</div>
+      </div>
+      <div class="service-card reveal" style="transition-delay: 0.1s;">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        </div>
+        <h3>Limpeza de Terreno</h3>
+        <p>Remoção de vegetação, entulho e destocamento completo com descarte ambientalmente responsável.</p>
+        <div class="service-num">02</div>
+      </div>
+      <div class="service-card reveal" style="transition-delay: 0.2s;">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+        </div>
+        <h3>Transporte de Material</h3>
+        <p>Frota própria de caminhões para transporte de terra, areia, brita e materiais diversos com logística otimizada.</p>
+        <div class="service-num">03</div>
+      </div>
+      <div class="service-card reveal" style="transition-delay: 0.15s;">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg>
+        </div>
+        <h3>Drenagem</h3>
+        <p>Sistemas de drenagem pluvial e de solo com dimensionamento técnico para prevenção de erosão e alagamentos.</p>
+        <div class="service-num">04</div>
+      </div>
+      <div class="service-card reveal" style="transition-delay: 0.25s;">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+        </div>
+        <h3>Compactação de Solo</h3>
+        <p>Compactação profissional com controle de proctor e ensaios laboratoriais que garantem a qualidade do solo.</p>
+        <div class="service-num">05</div>
+      </div>
+      <div class="service-card reveal" style="transition-delay: 0.3s;">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </div>
+        <h3>Topografia</h3>
+        <p>Levantamento planialtimétrico com GPS RTK de alta precisão para planejamento e acompanhamento de obras.</p>
+        <div class="service-num">06</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ████████████████████████████████████████████████████
+     PROJECTS SECTION
+     ████████████████████████████████████████████████████ -->
+<section class="projects" id="projects">
+  <div class="section-container">
+    <div class="projects-header reveal">
+      <div>
+        <div class="section-tag">Projetos</div>
+        <h2 class="section-heading">Obras que falam<br>por si mesmas</h2>
+      </div>
+      <p class="section-desc" style="max-width:380px;">
+        Cada projeto é uma prova do nosso compromisso com qualidade e resultado.
+      </p>
+    </div>
+    <div class="projects-grid">
+      <div class="project-card reveal">
+        <div class="project-bg" style="background: linear-gradient(135deg, #E8DDD0 0%, #D4C5B0 100%);"></div>
+        <div class="project-visual">
+          <svg width="160" height="100" viewBox="0 0 160 100" fill="none" aria-hidden="true">
+            <rect x="10" y="60" width="140" height="30" rx="2" fill="rgba(255,104,3,0.12)"/>
+            <rect x="20" y="40" width="30" height="50" rx="2" fill="rgba(255,104,3,0.2)"/>
+            <rect x="60" y="30" width="40" height="60" rx="2" fill="rgba(255,104,3,0.25)"/>
+            <rect x="110" y="45" width="30" height="45" rx="2" fill="rgba(255,104,3,0.18)"/>
+            <line x1="0" y1="90" x2="160" y2="90" stroke="rgba(11,5,1,0.1)" stroke-width="1"/>
+          </svg>
+        </div>
+        <div class="project-overlay">
+          <div class="project-tag">Loteamento</div>
+          <h3>Residencial Vista Bella</h3>
+          <div class="project-desc">Terraplanagem completa de 120.000m² para loteamento residencial em Londrina.</div>
+        </div>
+      </div>
+      <div class="project-card reveal" style="transition-delay: 0.1s;">
+        <div class="project-bg" style="background: linear-gradient(135deg, #D5DDE0 0%, #B8C8CF 100%);"></div>
+        <div class="project-visual">
+          <svg width="160" height="100" viewBox="0 0 160 100" fill="none" aria-hidden="true">
+            <rect x="30" y="20" width="100" height="70" rx="4" fill="rgba(255,104,3,0.15)"/>
+            <rect x="40" y="30" width="25" height="25" rx="2" fill="rgba(255,104,3,0.25)"/>
+            <rect x="75" y="30" width="25" height="25" rx="2" fill="rgba(255,104,3,0.2)"/>
+            <rect x="40" y="60" width="60" height="20" rx="2" fill="rgba(255,104,3,0.1)"/>
+          </svg>
+        </div>
+        <div class="project-overlay">
+          <div class="project-tag">Industrial</div>
+          <h3>Parque Industrial Norte</h3>
+          <div class="project-desc">Preparação de 80.000m² para galpões industriais com compactação e drenagem.</div>
+        </div>
+      </div>
+      <div class="project-card reveal" style="transition-delay: 0.2s;">
+        <div class="project-bg" style="background: linear-gradient(135deg, #E0D8CB 0%, #CFC3AD 100%);"></div>
+        <div class="project-visual">
+          <svg width="160" height="100" viewBox="0 0 160 100" fill="none" aria-hidden="true">
+            <path d="M10,80 Q40,30 80,50 Q120,70 150,35" stroke="rgba(255,104,3,0.3)" stroke-width="3" fill="none"/>
+            <path d="M10,85 L150,85" stroke="rgba(11,5,1,0.08)" stroke-width="1"/>
+            <circle cx="40" cy="52" r="4" fill="rgba(255,104,3,0.3)"/>
+            <circle cx="80" cy="50" r="4" fill="rgba(255,104,3,0.3)"/>
+            <circle cx="120" cy="48" r="4" fill="rgba(255,104,3,0.3)"/>
+          </svg>
+        </div>
+        <div class="project-overlay">
+          <div class="project-tag">Condomínio</div>
+          <h3>Condomínio Lago Azul</h3>
+          <div class="project-desc">Infraestrutura viária e terraplanagem para condomínio de alto padrão.</div>
+        </div>
+      </div>
+      <div class="project-card reveal" style="transition-delay: 0.15s;">
+        <div class="project-bg" style="background: linear-gradient(135deg, #D0D8DC 0%, #BBC8D0 100%);"></div>
+        <div class="project-visual">
+          <svg width="160" height="100" viewBox="0 0 160 100" fill="none" aria-hidden="true">
+            <rect x="10" y="70" width="140" height="6" rx="3" fill="rgba(255,104,3,0.2)"/>
+            <rect x="30" y="50" width="100" height="4" rx="2" fill="rgba(255,104,3,0.15)"/>
+            <polygon points="80,20 60,50 100,50" fill="rgba(255,104,3,0.12)"/>
+          </svg>
+        </div>
+        <div class="project-overlay">
+          <div class="project-tag">Infraestrutura</div>
+          <h3>Acesso Rodovia PR-445</h3>
+          <div class="project-desc">Terraplanagem e pavimentação de acesso rodoviário com 3,5km de extensão.</div>
+        </div>
+      </div>
+      <div class="project-card reveal" style="transition-delay: 0.25s;">
+        <div class="project-bg" style="background: linear-gradient(135deg, #D8D5C8 0%, #C8C2AD 100%);"></div>
+        <div class="project-visual">
+          <svg width="160" height="100" viewBox="0 0 160 100" fill="none" aria-hidden="true">
+            <rect x="20" y="30" width="120" height="55" rx="3" fill="rgba(255,104,3,0.1)"/>
+            <rect x="35" y="42" width="20" height="30" rx="2" fill="rgba(255,104,3,0.2)"/>
+            <rect x="65" y="35" width="25" height="37" rx="2" fill="rgba(255,104,3,0.25)"/>
+            <rect x="100" y="50" width="25" height="22" rx="2" fill="rgba(255,104,3,0.18)"/>
+          </svg>
+        </div>
+        <div class="project-overlay">
+          <div class="project-tag">Comercial</div>
+          <h3>Shopping Boulevard</h3>
+          <div class="project-desc">Corte e aterro de 45.000m³ para implantação do complexo comercial.</div>
+        </div>
+      </div>
+      <div class="project-card reveal" style="transition-delay: 0.3s;">
+        <div class="project-bg" style="background: linear-gradient(135deg, #DDD8CF 0%, #CEC5B5 100%);"></div>
+        <div class="project-visual">
+          <svg width="160" height="100" viewBox="0 0 160 100" fill="none" aria-hidden="true">
+            <path d="M10,75 C40,75 40,30 80,30 C120,30 120,55 150,55" stroke="rgba(255,104,3,0.25)" stroke-width="2.5" fill="none"/>
+            <path d="M10,80 C40,80 40,45 80,45 C120,45 120,65 150,65" stroke="rgba(255,104,3,0.15)" stroke-width="2" fill="none"/>
+            <rect x="60" y="60" width="40" height="25" rx="3" fill="rgba(255,104,3,0.12)"/>
+          </svg>
+        </div>
+        <div class="project-overlay">
+          <div class="project-tag">Agro</div>
+          <h3>Reservatório Fazenda Ouro</h3>
+          <div class="project-desc">Escavação de reservatório para irrigação com 15.000m³ de capacidade.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ████████████████████████████████████████████████████
+     CONTACT SECTION
+     ████████████████████████████████████████████████████ -->
+<section class="contact" id="contact">
+  <div class="section-container">
+    <div class="contact-grid">
+      <div class="reveal">
+        <div class="section-tag">Contato</div>
+        <h2 class="section-heading">Solicite seu<br>orçamento</h2>
+        <p class="section-desc" style="margin-bottom:32px;">Preencha o formulário e nossa equipe entrará em contato em até 24 horas úteis.</p>
+
+        <div class="contact-info">
+          <h3>Informações</h3>
+          <div class="contact-item">
+            <div class="ci-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div class="ci-text">
+              <strong>Endereço</strong>
+              <span>R. Cristoval Fernandes Moreno, 22, Cafezal, Londrina, PR, 86045-340</span>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="ci-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div class="ci-text">
+              <strong>Telefone</strong>
+              <span>(43) 98434-5098</span>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="ci-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div class="ci-text">
+              <strong>E-mail</strong>
+              <span>contato@servtech.com.br</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form reveal" style="transition-delay: 0.2s;">
+        <form onsubmit="event.preventDefault(); alert('Mensagem enviada com sucesso! Entraremos em contato em breve.');">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Nome completo</label>
+              <input type="text" id="name" placeholder="Seu nome" required>
+            </div>
+            <div class="form-group">
+              <label for="phone">Telefone</label>
+              <input type="tel" id="phone" placeholder="(43) 99999-9999" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" placeholder="seu@email.com" required>
+          </div>
+          <div class="form-group">
+            <label for="service">Serviço de interesse</label>
+            <select id="service">
+              <option value="">Selecione um serviço</option>
+              <option>Terraplanagem</option>
+              <option>Limpeza de Terreno</option>
+              <option>Transporte de Material</option>
+              <option>Drenagem</option>
+              <option>Compactação de Solo</option>
+              <option>Topografia</option>
+              <option>Outro</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Mensagem</label>
+            <textarea id="message" placeholder="Descreva seu projeto, dimensões do terreno, localização..."></textarea>
+          </div>
+          <button type="submit" class="btn-submit">Enviar Orçamento</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ████████████████████████████████████████████████████
+     LOCATION SECTION
+     ████████████████████████████████████████████████████ -->
+<section class="location" id="location">
+  <div class="section-container reveal">
+    <div class="section-tag">Localização</div>
+    <h2 class="section-heading">Onde estamos</h2>
+    <p class="section-desc" style="margin-bottom:32px;">R. Cristoval Fernandes Moreno, 22, Cafezal, Londrina, PR, 86045-340</p>
+    <div class="map-placeholder">
+      <iframe src="https://maps.google.com/maps?q=R.%20Cristoval%20Fernandes%20Moreno,%2022%20-%20Cafezal,%20Londrina%20-%20PR,%2086045-340&t=&z=15&ie=UTF8&iwloc=&output=embed" allowfullscreen="" loading="lazy" title="Localização Serv Tech"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ████████████████████████████████████████████████████
+     FAQ SECTION
+     ████████████████████████████████████████████████████ -->
+<section class="faq" id="faq">
+  <div class="section-container">
+    <div class="faq-grid">
+      <div class="reveal">
+        <div class="section-tag">FAQ</div>
+        <h2 class="section-heading">Perguntas<br>frequentes</h2>
+        <p class="section-desc">Tire suas dúvidas sobre nossos serviços de terraplanagem e infraestrutura.</p>
+      </div>
+      <div class="faq-list reveal" style="transition-delay: 0.15s;">
+        <div class="faq-item active">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Quanto tempo leva uma obra de terraplanagem?
+            <span class="faq-toggle">+</span>
+          </button>
+          <div class="faq-answer" style="max-height: 200px;">
+            <div class="faq-answer-inner">O prazo varia conforme o volume de terra a ser movimentado, condições do terreno e clima. Obras residenciais levam entre 5 a 15 dias. Projetos maiores, como loteamentos, podem levar de 30 a 90 dias. Fornecemos um cronograma detalhado na proposta.</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Vocês atendem quais regiões?
+            <span class="faq-toggle">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Atendemos Londrina e toda a região norte do Paraná, incluindo Cambé, Ibiporã, Rolândia, Arapongas, Apucarana e cidades vizinhas. Para projetos maiores, atendemos todo o estado do Paraná.</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            É necessário alguma licença para terraplanagem?
+            <span class="faq-toggle">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Sim, dependendo do porte da obra podem ser necessárias licenças ambientais e alvarás municipais. Nossa equipe orienta em todo o processo de documentação e regularização junto aos órgãos competentes.</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Como é calculado o orçamento?
+            <span class="faq-toggle">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">O orçamento é baseado no volume de terra (m³), tipo de serviço, distância de transporte de material, condições do solo e prazos. Realizamos uma visita técnica gratuita para levantamento preciso antes de elaborar a proposta.</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Vocês oferecem garantia nos serviços?
+            <span class="faq-toggle">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Sim. Todos os nossos serviços seguem normas técnicas da ABNT e oferecemos garantia com laudos de compactação e acompanhamento pós-obra conforme contrato.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ████████████████████████████████████████████████████
+     FOOTER
+     ████████████████████████████████████████████████████ -->
+<footer class="footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <span class="dot"></span>
+        Serv Tech
+      </div>
+      <p>Referência em terraplanagem e infraestrutura em Londrina e região norte do Paraná. Construímos a base do seu projeto com segurança e precisão.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Navegação</h4>
+      <a href="#hero">Home</a>
+      <a href="#about">Sobre</a>
+      <a href="#services">Serviços</a>
+      <a href="#projects">Projetos</a>
+      <a href="#contact">Contato</a>
+    </div>
+    <div class="footer-col">
+      <h4>Serviços</h4>
+      <a href="#services">Terraplanagem</a>
+      <a href="#services">Limpeza de Terreno</a>
+      <a href="#services">Transporte</a>
+      <a href="#services">Drenagem</a>
+      <a href="#services">Compactação</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contato</h4>
+      <a href="tel:+5543984345098">(43) 98434-5098</a>
+      <a href="mailto:contato@servtech.com.br">contato@servtech.com.br</a>
+      <a href="https://www.instagram.com/servtech__terraplenagem.pr/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.facebook.com/p/Servtech-Terraplenagem-100068021702453/" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://wa.me/5543984345098" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 Serv Tech Terraplanagem. Todos os direitos reservados.</p>
+    <div class="footer-bottom-links">
+      <a href="#">Política de Privacidade</a>
+      <a href="#">Termos de Uso</a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
