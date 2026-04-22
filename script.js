@@ -74,7 +74,7 @@ const counterObserver = new IntersectionObserver((entries) => {
     function update(now) {
       const progress = Math.min((now - start) / duration, 1);
       const eased = 1 - Math.pow(1 - progress, 3);
-      el.textContent = Math.round(eased * target) + (target >= 90 ? '%' : '+');
+      el.textContent = Math.round(eased * target) + (el.dataset.suffix || '+');
       if (progress < 1) requestAnimationFrame(update);
     }
 
