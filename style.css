@@ -427,6 +427,9 @@ nav.scrolled {
 /* Hero mobile image — hidden on desktop */
 .hero-img-mobile { display: none; }
 
+/* Hero background layer — mobile only, hidden on desktop */
+.hero-bg-layer { display: none; }
+
 /* Social sidebar */
 .social-sidebar {
   position: fixed;
@@ -1194,34 +1197,51 @@ section { padding: 120px 40px; }
   .nav-logo { color: var(--dark); }
   .nav-toggle span { background: var(--dark); }
 
-  /* HERO — tela cheia, conteúdo sobre a imagem */
+  /* HERO — imagem cobre 100% da altura via camada absoluta */
   .hero {
-    height: 100svh;
-    min-height: 100svh;
-    max-height: 100svh;
     position: relative;
+    height: auto;
+    min-height: 100svh;
+    max-height: none;
+    background: none !important;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     padding: 0;
     overflow: hidden;
-    background-size: 130% auto;
-    background-position: 55% 30%;
-    background-attachment: scroll;
   }
+
+  /* Camada de imagem: sempre 100% da altura do hero */
+  .hero-bg-layer {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("background hero.png");
+    background-size: cover;
+    background-position: center 20%;
+    background-repeat: no-repeat;
+    z-index: 0;
+  }
+
+  /* Overlay escuro para texto legível */
   .hero::before {
     content: '';
     position: absolute;
     inset: 0;
+    height: 100%;
     background: linear-gradient(
       to bottom,
-      rgba(245,243,240,0.0) 0%,
-      rgba(245,243,240,0.0) 35%,
-      rgba(245,243,240,0.72) 68%,
-      rgba(245,243,240,0.93) 100%
+      rgba(11,5,1,0.08) 0%,
+      rgba(11,5,1,0.15) 25%,
+      rgba(11,5,1,0.55) 58%,
+      rgba(11,5,1,0.82) 100%
     );
     z-index: 1;
   }
+
   .hero-container {
     position: relative;
     z-index: 2;
@@ -1229,31 +1249,28 @@ section { padding: 120px 40px; }
     flex-direction: column;
     justify-content: flex-end;
     width: 100%;
-    padding: 0 24px 52px;
+    padding: 0 22px 56px;
     margin-top: 0;
   }
-  .hero-content {
-    width: 100%;
-    max-width: 100%;
-  }
+  .hero-content { width: 100%; max-width: 100%; }
 
-  /* Texto igual ao desktop */
+  /* Texto branco sobre o overlay escuro */
   .hero-badge {
-    color: var(--orange);
+    color: rgba(255,255,255,0.75);
     margin-bottom: 16px;
   }
-  .hero-badge .line { background: var(--orange); }
+  .hero-badge .line { background: rgba(255,255,255,0.5); }
   .hero-title {
-    color: var(--dark);
+    color: #ffffff;
     font-size: clamp(2.2rem, 8vw, 3rem);
     letter-spacing: -1px;
     white-space: normal;
     margin-bottom: 16px;
   }
   .hero-desc {
-    color: rgba(11,5,1,0.6);
+    color: rgba(255,255,255,0.80);
     font-size: 0.95rem;
-    margin-bottom: 28px;
+    margin-bottom: 0;
     max-width: 100%;
   }
 
@@ -1271,6 +1288,7 @@ section { padding: 120px 40px; }
     flex-direction: column;
     gap: 12px;
     width: 100%;
+    margin-top: 24px;
   }
   .hero-buttons .btn-primary,
   .hero-buttons .btn-secondary {
@@ -1282,9 +1300,9 @@ section { padding: 120px 40px; }
     font-size: 0.95rem;
   }
   .hero-buttons .btn-secondary {
-    color: var(--dark);
-    border-color: rgba(11,5,1,0.15);
-    background: transparent;
+    color: #ffffff;
+    border-color: rgba(255,255,255,0.35);
+    background: rgba(255,255,255,0.08);
   }
 
   /* SEÇÕES */
