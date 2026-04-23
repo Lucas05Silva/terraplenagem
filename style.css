@@ -514,7 +514,7 @@ section { padding: 120px 40px; }
   height: 480px;
   border-radius: 24px;
   overflow: hidden;
-  background: url('Background.png') center / cover no-repeat, var(--bg-warm);
+  background: url('fundo seção 2.jpeg') center / cover no-repeat, var(--bg-warm);
 }
 
 .about-visual-inner {
@@ -1170,9 +1170,25 @@ section { padding: 120px 40px; }
   .nav-cta { display: none; }
   .nav-toggle { display: flex; }
 
-  .hero { padding: 110px 24px 48px; }
-  .hero-title { font-size: clamp(1.6rem, 4vw, 2.6rem); letter-spacing: -0.5px; white-space: normal; }
-  .hero-content { max-width: 100%; }
+  .hero {
+    padding: 0 40px 72px;
+    background:
+      linear-gradient(to top, rgba(11,5,1,0.85) 0%, rgba(11,5,1,0.42) 42%, rgba(11,5,1,0.08) 100%),
+      url("background hero.png") center / cover no-repeat;
+    justify-content: flex-end;
+  }
+  .hero-title {
+    color: var(--white);
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    letter-spacing: -0.5px;
+    white-space: normal;
+  }
+  .hero-desc { color: rgba(255,255,255,0.72); }
+  .hero-buttons .btn-secondary {
+    color: var(--white);
+    border-color: rgba(255,255,255,0.3);
+  }
+  .hero-content { max-width: 680px; }
 
   /* Projetos — overlay sempre visível em touch */
   .project-card .project-overlay {
@@ -1203,19 +1219,18 @@ section { padding: 120px 40px; }
 @media (max-width: 640px) {
   nav { padding: 12px 16px; }
 
-  /* Hero mobile: texto em cima, imagem embaixo */
+  /* Hero mobile: imagem de fundo com gradiente escuro + texto branco */
   .hero {
-    padding: 80px 0 0;
-    min-height: auto;
-    background: var(--bg-warm);
-    flex-direction: column;
+    padding: 0 20px 56px;
+    min-height: 100vh;
+    background:
+      linear-gradient(to top, rgba(11,5,1,0.88) 0%, rgba(11,5,1,0.5) 45%, rgba(11,5,1,0.12) 100%),
+      url("background hero.png") center / cover no-repeat;
+    justify-content: flex-end;
   }
 
   .hero-container {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0;
-    padding: 0 16px 32px;
+    align-items: flex-start;
   }
 
   .hero-content {
@@ -1225,23 +1240,29 @@ section { padding: 120px 40px; }
     border-radius: 0;
     padding: 0;
     max-width: 100%;
-    padding-top: 16px;
   }
 
   .hero-badge {
+    color: var(--orange);
     margin-bottom: 18px;
   }
 
+  .hero-badge .line {
+    background: var(--orange);
+  }
+
   .hero-title {
-    font-size: clamp(1.5rem, 6.5vw, 2rem);
+    color: var(--white);
+    font-size: clamp(1.7rem, 7.5vw, 2.3rem);
     letter-spacing: -0.5px;
     white-space: normal;
     margin-bottom: 16px;
   }
 
   .hero-desc {
+    color: rgba(255,255,255,0.72);
     font-size: 0.9rem;
-    margin-bottom: 24px;
+    margin-bottom: 28px;
   }
 
   .hero-buttons {
@@ -1256,14 +1277,12 @@ section { padding: 120px 40px; }
     padding: 14px 24px;
   }
 
-  /* Imagem aparece abaixo do texto */
-  .hero-img-mobile {
-    display: block;
-    width: 100%;
-    height: 240px;
-    object-fit: cover;
-    object-position: center;
+  .hero-buttons .btn-secondary {
+    color: var(--white);
+    border-color: rgba(255,255,255,0.3);
   }
+
+  .hero-img-mobile { display: none; }
 
   /* Projetos — overlay sempre visível em mobile */
   .project-card .project-overlay {
