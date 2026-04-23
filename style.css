@@ -175,14 +175,15 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  transition: background 0.4s, backdrop-filter 0.4s, box-shadow 0.4s;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 1px 24px rgba(11,5,1,0.06);
+  transition: box-shadow 0.4s;
 }
 
 nav.scrolled {
-  background: rgba(255,255,255,0.9);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  box-shadow: 0 1px 30px rgba(11,5,1,0.06);
+  box-shadow: 0 2px 30px rgba(11,5,1,0.10);
 }
 
 .nav-logo {
@@ -1180,30 +1181,35 @@ section { padding: 120px 40px; }
 @media (max-width: 768px) {
   html, body { overflow-x: hidden; }
 
-  /* NAV — semitransparente escuro para fundir com a hero */
+  /* NAV — branco, texto escuro, sempre legível */
   nav {
     padding: 14px 20px;
-    background: rgba(11,5,1,0.6);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
   }
   .nav-links { display: none; }
   .nav-cta { display: none; }
   .nav-toggle { display: flex; }
-  .nav-logo { color: #ffffff; }
-  .nav-toggle span { background: #ffffff; }
+  .nav-logo { color: var(--dark); }
+  .nav-toggle span { background: var(--dark); }
 
-  /* HERO — mantém background-image, adiciona overlay via ::before */
-  .hero { min-height: 100svh; position: relative; }
+  /* HERO — background-image intocado, overlay + posição corrigida */
+  .hero {
+    min-height: 100svh;
+    position: relative;
+    background-size: 160% auto;
+    background-position: center 20%;
+  }
   .hero::before {
     content: '';
     position: absolute;
     inset: 0;
     background: linear-gradient(
       to bottom,
-      rgba(11,5,1,0.45) 0%,
-      rgba(11,5,1,0.3) 50%,
-      rgba(11,5,1,0.6) 100%
+      rgba(11,5,1,0.50) 0%,
+      rgba(11,5,1,0.35) 40%,
+      rgba(11,5,1,0.65) 100%
     );
     z-index: 1;
   }
@@ -1300,6 +1306,10 @@ section { padding: 120px 40px; }
 @media (max-width: 480px) {
   nav { padding: 12px 16px; }
 
+  .hero {
+    background-size: 180% auto;
+    background-position: center 15%;
+  }
   .hero-container { padding-top: 60px; }
   .hero-title { font-size: clamp(1.9rem, 8vw, 2.4rem); }
 
