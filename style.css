@@ -1226,15 +1226,8 @@ section { padding: 120px 40px; }
     z-index: 0;
   }
 
-  /* Overlay claro (warm) — permite texto escuro igual ao desktop */
-  .hero::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    height: 100%;
-    background: rgba(245,243,240,0.60);
-    z-index: 1;
-  }
+  /* Sem overlay — imagem com cores naturais */
+  .hero::before { display: none; }
 
   .hero-container {
     position: relative;
@@ -1250,7 +1243,7 @@ section { padding: 120px 40px; }
   /* Cores idênticas ao desktop */
   .hero-badge {
     color: var(--orange);
-    margin-bottom: 16px;
+    margin-bottom: 28px;
   }
   .hero-badge .line { background: var(--orange); }
   .hero-title {
@@ -1258,12 +1251,12 @@ section { padding: 120px 40px; }
     font-size: clamp(2.2rem, 8vw, 3rem);
     letter-spacing: -1px;
     white-space: normal;
-    margin-bottom: 16px;
+    margin-bottom: 28px;
   }
   .hero-desc {
     color: rgba(11,5,1,0.6);
     font-size: 0.95rem;
-    margin-bottom: 0;
+    margin-bottom: 40px;
     max-width: 100%;
   }
 
@@ -1279,9 +1272,9 @@ section { padding: 120px 40px; }
   /* BOTÕES */
   .hero-buttons {
     flex-direction: column;
-    gap: 12px;
+    gap: 14px;
     width: 100%;
-    margin-top: 24px;
+    margin-top: 0;
   }
   .hero-buttons .btn-primary,
   .hero-buttons .btn-secondary {
